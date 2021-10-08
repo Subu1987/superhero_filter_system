@@ -1,0 +1,31 @@
+/*********** RESPONSIVENESS *************/
+
+@media (min-width:1200px) {
+    
+    .container{
+        width: 95%;
+    } 
+
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    
+    .container{
+        width: 98%;
+    }
+    .filters_child{
+        width: 45%;
+    }
+    .filter_range_parent{
+        width: 55%;
+    }
+    .model{
+        width:85%
+    }
+    .filter_range{
+        width: 80%;
+    }
+    .field_container{
+        width: 60%;
+    }
+}
