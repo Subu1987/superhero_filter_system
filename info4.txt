@@ -1,0 +1,92 @@
+// to apply sorting to our code
+// 1st we have to give id's to sorting property & value field 
+// <select class="filter_field" id="sortProperty">
+// <select class="filter_field" id="sortType">
+// just to fetch data from tht selected field
+
+// sorting() 
+// 1st we fetching the values by given each feild a specific ID 
+// then we create a sorting function where we store the values in property & type variable by fetching it.
+// the whenever we select a option it will called a event onchange ,it will simply call the function.
+
+// in JS, we already have a sort() array function.
+// 1st we will check that property & type value is not blank 
+// like this-   if(property!="" && value!= "")
+// then, only perform sorting other wise dont perform sort 
+
+// then, we are gonna perform our sort function in, temsuperheros array of objects
+// temsuperheros.sort()
+// in sort function we pass a callback function or a compare function 
+// which simply compare too elements, 
+// data.sort((a,b)=>{
+    return a-b
+}) // if assending
+
+// data.sort((a,b)=>{
+    return b-a
+}) // if desending
+
+// tempsuperheroes.sort((a,b) here a,b represent each object of that array 
+// then we check if(type==="asc") has a value in it here "asc" 
+// then, return a.powerstats[property]- a.powerstats[property];
+// a is object of tempsuperheroes array, powerstats also property that object where we accesing specific property 
+// coming from selected field, its not specific coming as a string that why we use array notaion to access it.
+
+// like this- 
+      if(type==="asc") {
+        return a.powerstats[property]- b.powerstats[property];
+      }
+      else if(type==="desc"){
+        return b.powerstats[property]- a.powerstats[property];
+      }
+
+// then we display(tempsuperheroes);
+// whatever objects in tempsuperheroes sorted as assending or decending we simply display it.
+
+
+
+// HOW TO REMOVE SORTING 
+
+// when we copy one array from another array, if one array is sorted another one is also sorted,
+// so we cant get natuaral array back 
+// if we copying one array to another array we copying same instance of array.
+// it basically work with main instance.
+
+// spread operater(...):
+
+// its actually does, 
+// let a=[1,2,3,4,5];
+
+  console.log(...a);
+  :  1 2 3 4 5
+// ... spread operater converts the array into no of elements without array 
+// it gives you all the values separeted by commas 
+// its spread the array.
+
+// in case of math.max() & math.min()
+
+// whta does max() & min() requires is, no of values separeted by commas like this 1,2,3,4,5
+// let a=[1,5,36,84,2];
+// console.log(Math.max(...a));
+// max value:   84
+// here, spread simply spreading the values invidually separted by commas
+// after spread operater our array become by separeted values.
+
+
+// let a=[1,2,3,4]
+// let b=[1,2,3,4]
+// here, a,b are different array with same values
+// let b=a;
+// if one value will change other one also change
+
+// how do we get only values of that array but not the whole array.
+// let b=[...a]; 
+// now we are, simply getting only values of a array by spreading operator
+
+
+// let sortSuperheroes = [...tempsuperheroes];
+// here, sortSuperheroes, tempsuperheroes two different array.
+// 1st, we spread tempsuperheroes by spread operater then store the collection of values.
+// in sortSuperheroes as an array, so that whatever filter applied in tempsuperheroes we get the exact data, then sorting with that data.
+// & display that sortSuperheroes like this display(sortSuperheroes);
+
